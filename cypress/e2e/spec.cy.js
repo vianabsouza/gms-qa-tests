@@ -6,9 +6,10 @@ describe('US-012-Funcionalidade: Cadastro de membros', () => {
   })
 
  it.only('Deve fazer o cadastro de campos obrigatórios', () => {
+    let email = `barbara${Date.now()}@teste.com`
     cy.get('#signup-firstname').type('Barbara')
     cy.get('#signup-lastname').type('Viana')
-    cy.get('#signup-email').type('barbara1@teste.com')
+    cy.get('#signup-email').type(email)
     cy.get('#signup-phone').type('')
     cy.get('#signup-password').type('Test&2020')
     cy.get('#signup-button').click()
