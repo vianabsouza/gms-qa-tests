@@ -26,17 +26,17 @@ describe('US-012-Funcionalidade: Cadastro de membros', () => {
    })
 })
 
-  describe('US-012-Funcionalidade: Cadastro de membros', () => {
+describe('US-012-Funcionalidade: Cadastro de membros', () => {
   it('Validação de cadastro de email duplicado', () => {
-      cy.visit('http://192.168.15.25:8080/')
-      cy.get('#signup-firstname').type('Barbara')
-      cy.get('#signup-lastname').type('Viana')
-      cy.get('#signup-email').type('barbara2@teste.com')
-      cy.get('#signup-phone').type('11955225522')
-      cy.get('#signup-password').type('Test&2020')
-      cy.get('#signup-button').click()
-      cy.get('#signup-response').should('contain' , 'Cadastro realizado com sucesso!')
-    })
+    cy.visit('http://192.168.15.25:8080/')
+    cy.get('#signup-firstname').type('Barbara')
+    cy.get('#signup-lastname').type('Viana')
+    cy.get('#signup-email').type('barbara2@teste.com')
+    cy.get('#signup-phone').type('11955225522')
+    cy.get('#signup-password').type('Test&2020')
+    cy.get('#signup-button').click()
+    cy.get('#signup-response').should('contain' , 'Cadastro realizado com sucesso!')
+  })
 })
 
 describe('US-012-Funcionalidade: Cadastro de membros', () => {
