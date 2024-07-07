@@ -2,10 +2,10 @@
 
 describe('US-012-Funcionalidade: Cadastro de membros', () => {
   beforeEach(() => {
-    cy.visit('http://192.168.15.25:8080/')
+    cy.visit('/')
   })
 
- it('Deve fazer o cadastro de campos obrigatórios', () => {
+ it.only('Deve fazer o cadastro de campos obrigatórios', () => {
     cy.get('#signup-firstname').type('Barbara')
     cy.get('#signup-lastname').type('Viana')
     cy.get('#signup-email').type('barbara1@teste.com')
