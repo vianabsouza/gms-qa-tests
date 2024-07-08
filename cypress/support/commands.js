@@ -82,6 +82,12 @@ Cypress.Commands.add('preencherCadastro', (nome, sobrenome, email, telefone, sen
   cy.get('#signup-button').click()
  })
 
+ Cypress.Commands.add('filmesComSucesso', (filme) => {
+  cy.get('#search-input').type(filme)
+  cy.get('#search-button').click()
+  cy.get('#results-section').should('contain', filme)
+})
+
 Cypress.Commands.add('validacaoPavraChaveValidaTempoReal', (filme) => {
   cy.get('#search-input').type(filme)
 })
