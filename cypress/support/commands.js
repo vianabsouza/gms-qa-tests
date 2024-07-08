@@ -32,7 +32,7 @@ Cypress.Commands.add('preencherCadastroCamposObrigatorios', (nome, sobrenome, em
   cy.get('#signup-button').click()
  })
 
-Cypress.Commands.add('preencherCadastro', (nome, sobrenome, email, telefone, senha) => {
+Cypress.Commands.add('preencherCadastroCompleto', (nome, sobrenome, email, telefone, senha) => {
   cy.get('#signup-firstname').type(nome)
   cy.get('#signup-lastname').type(sobrenome)
   cy.get('#signup-email').type(email)
@@ -41,7 +41,7 @@ Cypress.Commands.add('preencherCadastro', (nome, sobrenome, email, telefone, sen
   cy.get('#signup-button').click()
  })
 
- Cypress.Commands.add('emailDuplicado', (nome, sobrenome, email, telefone, senha) => {
+ Cypress.Commands.add('preencherEmailDuplicado', (nome, sobrenome, email, telefone, senha) => {
   cy.get('#signup-firstname').type(nome)
   cy.get('#signup-lastname').type(sobrenome)
   cy.get('#signup-email').type(email)
@@ -50,7 +50,7 @@ Cypress.Commands.add('preencherCadastro', (nome, sobrenome, email, telefone, sen
   cy.get('#signup-button').click()
  })
 
- Cypress.Commands.add('emailInvalido', (nome, sobrenome, email, telefone, senha) => {
+ Cypress.Commands.add('preencherEmailInvalido', (nome, sobrenome, email, telefone, senha) => {
   cy.get('#signup-firstname').type(nome)
   cy.get('#signup-lastname').type(sobrenome)
   cy.get('#signup-email').type(email)
@@ -59,12 +59,12 @@ Cypress.Commands.add('preencherCadastro', (nome, sobrenome, email, telefone, sen
   cy.get('#signup-button').click()
  })
 
- Cypress.Commands.add('envioSemCamposObrigatorios', (telefone) => {
+ Cypress.Commands.add('preencherSemCamposObrigatorios', (telefone) => {
   cy.get('#signup-phone').type(telefone)
   cy.get('#signup-button').click()
  })
 
- Cypress.Commands.add('bloqueioSenhaFraca', (nome, sobrenome, email, telefone, senha) => {
+ Cypress.Commands.add('preencherSenhaFraca', (nome, sobrenome, email, telefone, senha) => {
   cy.get('#signup-firstname').type(nome)
   cy.get('#signup-lastname').type(sobrenome)
   cy.get('#signup-email').type(email)
@@ -73,7 +73,7 @@ Cypress.Commands.add('preencherCadastro', (nome, sobrenome, email, telefone, sen
   cy.get('#signup-button').click()
  })
 
- Cypress.Commands.add('bloqueioSenhaVazia', (nome, sobrenome, email, telefone, senha) => {
+ Cypress.Commands.add('preencherSenhaVazia', (nome, sobrenome, email, telefone, senha) => {
   cy.get('#signup-firstname').type(nome)
   cy.get('#signup-lastname').type(sobrenome)
   cy.get('#signup-email').type(email)
@@ -82,22 +82,22 @@ Cypress.Commands.add('preencherCadastro', (nome, sobrenome, email, telefone, sen
   cy.get('#signup-button').click()
  })
 
- Cypress.Commands.add('filmesComSucesso', (filme) => {
+ Cypress.Commands.add('retornarFilmesComSucesso', (filme) => {
   cy.get('#search-input').type(filme)
   cy.get('#search-button').click()
   cy.get('#results-section').should('contain', filme)
 })
 
-Cypress.Commands.add('validacaoPavraChaveValidaTempoReal', (filme) => {
+Cypress.Commands.add('retornarFilmesTempoReal', (filme) => {
   cy.get('#search-input').type(filme)
 })
 
-Cypress.Commands.add('validacaoFilmesSemResultados', (filme) => {
+Cypress.Commands.add('retornarFilmesSemResultados', (filme) => {
   cy.get('#search-input').type(filme)
   cy.get('#search-button').click()
 })
 
-Cypress.Commands.add('validacaoLimparBusca', (filme) => {
+Cypress.Commands.add('retornarLimparBusca', (filme) => {
   cy.get('#search-input').type(filme)
   cy.get('#clear-button').click()
 })
