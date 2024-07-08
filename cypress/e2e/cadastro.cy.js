@@ -107,7 +107,7 @@ describe('US-001-Funcionalidade: Busca de filmes', () => {
     cy.visit('/')
   })
 
-  it.only('Validação ao limpar busca de filmes', () => {
+  it('Validação ao limpar busca de filmes', () => {
     cy.validacaoLimparBusca('A Viagem]')
   })
 })
