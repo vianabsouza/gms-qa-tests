@@ -1,6 +1,12 @@
+const { afterEach } = require("mocha")
+
 describe('US-001-Funcionalidade: Busca de filmes', () => {
   beforeEach(() => {
     cy.visit('/')
+  })
+
+  afterEach(() => {
+    cy.screenshot()
   })
 
   it('Validação de busca de filmes com sucesso', () => {
