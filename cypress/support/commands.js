@@ -78,7 +78,9 @@ Cypress.Commands.add('preencherCadastroCompleto', (nome, sobrenome, email, telef
   cy.get('#signup-lastname').type(sobrenome)
   cy.get('#signup-email').type(email)
   cy.get('#signup-phone').type(telefone)
-  cy.get('#signup-password').type(senha)
+  if (senha !== '') {
+    cy.get('#signup-password').type(senha)
+  }
   cy.get('#signup-button').click()
  })
 
